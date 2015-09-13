@@ -1,0 +1,13 @@
+<template name="driverRow">
+  <tr>
+    <td>{{carAndDriver}}</td>
+    <td>Seats {{seats}}</td>
+    <td>More info</td>
+    <td>
+    <span class="edit-driver glyphicon glyphicon-edit"></span>
+    {{#if currentUser}}
+    <span class="delete-driver glyphicon glyphicon-trash"></span>
+    {{/if}}
+    </td>
+  </tr>
+</template>

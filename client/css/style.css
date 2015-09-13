@@ -1,0 +1,12 @@
+.group-email-form {
+  width: 60%;
+  margin: 0 auto;
+}
+
+.group-form {
+  display: none;
+}
+
+.row-link {
+  cursor: pointer;
+}

@@ -1,0 +1,32 @@
+<template name="groupsList">
+  <div class="text-center"><button type="button" class="new-group-btn btn btn-success btn-lg">New Event</button></div>
+  <div id="new-group-form" class="jumbotron create-form">
+    <div class="close-btn-container"><span class="close-btn glyphicon glyphicon-menu-up" aria-hidden="true"></span></div>
+    <form>
+      <div class="form-group">
+        <label>Event name</label>
+        <input type="text" class="form-control" placeholder="Event Name">
+      </div>
+      <div class="checkbox">
+        <label>
+          <input type="checkbox">Verify members through their email addresses
+          <div><b>Note:</b> you will have to enter their email addresses yourself</div>
+        </label>
+      </div>
+      <button type="submit" class="btn btn-default">Submit</button>
+    </form>
+  </div>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Event name</th>
+        <th>Created</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each groups}}
+      {{> groupRow}}
+      {{/each}}
+    </tbody>
+  </table>
+</template>

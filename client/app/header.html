@@ -1,0 +1,21 @@
+<template name="header">
+  {{#if currentUser}}
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="collapse navbar-collapse">
+        <ul class="nav navbar-nav">
+          <a class="navbar-brand" href="{{pathFor 'groupsList'}}"><span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span></a>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">{{currentUser.emails.[0].address}}<span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="#" class="logout">Logout</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  {{/if}}
+</template>

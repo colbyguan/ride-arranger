@@ -1,0 +1,65 @@
+<template name="groupPage">
+  <div class="container">
+    <h1>{{name}}</h1>
+    <h4 class="text-muted">Managed by</h4><h4 class="text-muted editable" data-type="textarea" data-placeholder="Manager Name">{{managerEmail}}</h4>
+    <div class="col-md-6">
+      <h3>Drivers</h3>
+      <button type="button" class="add-driver btn btn-success">I'd like to drive</button>
+      <div class="jumbotron create-form driver-form-container">
+        <div class="close-btn-container"><span class="close-btn glyphicon glyphicon-menu-up" aria-hidden="true"></span></div>
+        <form class="new-driver-form">
+          <div class="form-group">
+            <label>Driver name*</label>
+            <input name="driverName" type="text" class="form-control" placeholder="Name">
+          </div>
+          <div class="form-group">
+            <label>Available seats*</label>
+            <input name="driverSeats" type="number" class="form-control">
+          </div>
+          <div class="col-md-4 form-group">
+            <label>Make</label>
+            <input name="driverMake" type="text" class="form-control">
+          </div>
+          <div class="col-md-4 form-group">
+            <label>Model</label>
+            <input name="driverModel" type="text" class="form-control">
+          </div>
+          <div class="col-md-4 form-group">
+            <label>Color</label>
+            <input name="driverColor" type="color" class="form-control">
+          </div>
+          <div class="custom-fields-container">
+          </div>
+          <div class="btn-group" role="group">
+            <button type="submit" class="btn btn-default">Submit</button>
+            <button type="button" class="new-driver-field btn btn-default" data-toggle="tooltip" data-placement="bottom" title="eg. music genre, mood, Uber rating">Add custom info</button>
+          </div>
+        </form>
+      </div>
+
+      <table class="table table-striped">
+        <tbody>
+        {{#each drivers}}
+          {{> driverRow}}
+        {{/each}}
+        </tbody>
+      </table>
+    </div>
+    <div class="col-md-6">
+      <h3>Passengers</h3>
+      <button type="button" class="add-passenger btn btn-success">I'll ride along</button>
+      <div class="jumbotron create-form passenger-form-container">
+        <div class="close-btn-container"><span class="close-btn glyphicon glyphicon-menu-up" aria-hidden="true"></span></div>
+        <form class="new-passenger-form">
+          <div class="form-group">
+            <label>Name*</label>
+            <input name="passengerName" type="text" class="form-control" placeholder="Name">
+          </div>
+          <div>Preferences
+          </div>
+          <button type="submit" class="btn btn-default">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</template>

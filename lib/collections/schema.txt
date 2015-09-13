@@ -1,0 +1,41 @@
+group
+{
+  ownerId:
+  name: String
+  managerName:
+  driverIds: []
+  memberIds: []
+  useEmailVerification: Bool
+  driverEmails: []
+  memberEmails: []
+  created: Date
+}
+
+user
+{
+  groupIds: []
+}
+
+driver
+{
+  groupId: 
+  name:
+  email:
+  description:
+  passengers: 
+  seats: Number
+  customInfo: {
+    make:
+    model:
+    color:
+  }
+}
+
+passenger
+{
+  groupId: 
+  name:
+  email:
+  preferences: []
+  assignedCar: 
+}
