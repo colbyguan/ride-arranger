@@ -19,5 +19,12 @@ Template.driverRow.helpers({
       suffix = 'car';
     }
     return prefix + suffix;
+  },
+  customFields: function() {
+    var customsArray = [];
+    _.each(_.omit(this.customInfo, 'make', 'model', 'color'), function(v, k) {
+      customsArray.push({key: k, value: v});
+    });
+    return customsArray;
   }
 });

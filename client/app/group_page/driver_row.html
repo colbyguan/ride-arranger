@@ -2,7 +2,10 @@
   <tr>
     <td>{{carAndDriver}}</td>
     <td>Seats {{seats}}</td>
-    <td>More info</td>
+    <td>
+      <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#{{_id}}">More Info</button>
+      
+    </td>
     <td>
     <span class="edit-driver glyphicon glyphicon-edit"></span>
     {{#if currentUser}}
@@ -10,4 +13,9 @@
     {{/if}}
     </td>
   </tr>
+  <div class="driver-more-info well collapse" id="{{_id}}">
+    {{#each customFields}}
+    <p><b>{{key}}</b>: {{value}} </p>
+    {{/each}}
+  </div>
 </template>
